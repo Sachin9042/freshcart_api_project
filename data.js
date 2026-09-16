@@ -1,0 +1,70 @@
+const CATEGORIES=[
+  {name:"Fruits",icon:"apple"},
+  {name:"Vegetables",icon:"leaf"},
+  {name:"Dairy & Eggs",icon:"milk"},
+  {name:"Rice & Staples",icon:"grain"},
+  {name:"Snacks",icon:"snack"},
+  {name:"Beverages",icon:"drink"},
+  {name:"Household",icon:"home"},
+  {name:"Personal Care",icon:"care"}
+];
+
+const BRANDS=["FreshFarm","DailyChoice","NatureBest","GoodDay","PureLife","HomeCare"];
+
+const PRODUCTS=[
+{id:1,name:"Banana Robusta",brand:"FreshFarm",cat:"Fruits",price:49,old:59,unit:"1 kg",rating:4.8,reviews:128,stock:10,tag:"Bestseller",desc:"Naturally sweet, fresh Robusta bananas selected for everyday eating.",img:"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=900&q=85"},
+{id:2,name:"Red Apple",brand:"NatureBest",cat:"Fruits",price:149,old:179,unit:"1 kg",rating:4.8,reviews:94,stock:10,tag:"Fresh",desc:"Crisp red apples with a naturally sweet and refreshing taste.",img:"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=900&q=85"},
+{id:3,name:"Green Apple",brand:"NatureBest",cat:"Fruits",price:139,old:165,unit:"1 kg",rating:4.6,reviews:76,stock:10,desc:"Fresh green apples, perfect for snacking and salads.",img:"https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?auto=format&fit=crop&w=900&q=85"},
+{id:4,name:"Fresh Orange",brand:"FreshFarm",cat:"Fruits",price:89,old:110,unit:"1 kg",rating:4.7,reviews:81,stock:10,desc:"Juicy oranges packed with a bright citrus flavour.",img:"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=900&q=85"},
+{id:5,name:"Sweet Grapes",brand:"FreshFarm",cat:"Fruits",price:119,old:145,unit:"500 g",rating:4.5,reviews:64,stock:10,desc:"Sweet, juicy grapes packed fresh for your table.",img:"https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=900&q=85"},
+{id:6,name:"Pomegranate",brand:"NatureBest",cat:"Fruits",price:169,old:199,unit:"1 kg",rating:4.7,reviews:72,stock:10,desc:"Ruby-red pomegranate with juicy seeds and rich flavour.",img:"https://images.unsplash.com/photo-1541344999736-83eca272f6fc?auto=format&fit=crop&w=900&q=85"},
+
+{id:7,name:"Tomato",brand:"FreshFarm",cat:"Vegetables",price:39,old:49,unit:"1 kg",rating:4.7,reviews:141,stock:10,tag:"Daily Pick",desc:"Firm, ripe tomatoes suitable for curries, salads and cooking.",img:"https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=900&q=85"},
+{id:8,name:"Potato",brand:"FreshFarm",cat:"Vegetables",price:35,old:45,unit:"1 kg",rating:4.6,reviews:120,stock:10,desc:"Everyday potatoes selected for freshness and versatility.",img:"https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=900&q=85"},
+{id:9,name:"Carrot",brand:"FreshFarm",cat:"Vegetables",price:59,old:69,unit:"500 g",rating:4.7,reviews:102,stock:10,desc:"Crunchy orange carrots, great for salads and cooking.",img:"https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=900&q=85"},
+{id:10,name:"Broccoli",brand:"FreshFarm",cat:"Vegetables",price:79,old:95,unit:"250 g",rating:4.5,reviews:58,stock:10,desc:"Fresh green broccoli florets with a clean, mild taste.",img:"https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=900&q=85"},
+{id:11,name:"Green Capsicum",brand:"FreshFarm",cat:"Vegetables",price:69,old:80,unit:"500 g",rating:4.6,reviews:66,stock:10,desc:"Crisp green capsicum for stir-fries, pizza and curries.",img:"https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=900&q=85"},
+{id:12,name:"Onion",brand:"FreshFarm",cat:"Vegetables",price:45,old:55,unit:"1 kg",rating:4.8,reviews:153,stock:10,desc:"Fresh onions for everyday cooking.",img:"https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=900&q=85"},
+
+{id:13,name:"Fresh Milk",brand:"DailyChoice",cat:"Dairy & Eggs",price:32,old:35,unit:"500 ml",rating:4.8,reviews:220,stock:10,tag:"Popular",desc:"Fresh everyday milk for tea, coffee, cereal and cooking.",img:"https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=900&q=85"},
+{id:14,name:"Farm Eggs",brand:"DailyChoice",cat:"Dairy & Eggs",price:72,old:80,unit:"12 pcs",rating:4.8,reviews:188,stock:10,desc:"Farm-fresh eggs packed carefully for your kitchen.",img:"https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=900&q=85"},
+{id:15,name:"Greek Yogurt",brand:"PureLife",cat:"Dairy & Eggs",price:95,old:110,unit:"400 g",rating:4.6,reviews:87,stock:10,desc:"Creamy yogurt with a smooth texture for breakfast and snacks.",img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85"},
+{id:16,name:"Salted Butter",brand:"DailyChoice",cat:"Dairy & Eggs",price:58,old:65,unit:"100 g",rating:4.7,reviews:91,stock:10,desc:"Smooth salted butter for toast, cooking and baking.",img:"https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=900&q=85"},
+{id:17,name:"Cheddar Cheese",brand:"PureLife",cat:"Dairy & Eggs",price:145,old:165,unit:"200 g",rating:4.7,reviews:75,stock:10,desc:"Rich cheddar cheese for sandwiches, pasta and snacks.",img:"https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=900&q=85"},
+{id:18,name:"Paneer",brand:"PureLife",cat:"Dairy & Eggs",price:110,old:125,unit:"200 g",rating:4.6,reviews:83,stock:10,desc:"Soft fresh paneer for curries, grills and quick recipes.",img:"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=85"},
+
+{id:19,name:"Basmati Rice",brand:"NatureBest",cat:"Rice & Staples",price:299,old:349,unit:"5 kg",rating:4.8,reviews:176,stock:10,tag:"10% OFF",desc:"Long-grain basmati rice with a fragrant aroma.",img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=900&q=85"},
+{id:20,name:"Wheat Flour",brand:"NatureBest",cat:"Rice & Staples",price:219,old:249,unit:"5 kg",rating:4.7,reviews:113,stock:10,desc:"Fine wheat flour for chapati, roti and baking.",img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"},
+{id:21,name:"Toor Dal",brand:"NatureBest",cat:"Rice & Staples",price:149,old:170,unit:"1 kg",rating:4.7,reviews:98,stock:10,desc:"Clean, quality toor dal for everyday Indian cooking.",img:"https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85"},
+{id:22,name:"Sugar",brand:"DailyChoice",cat:"Rice & Staples",price:49,old:55,unit:"1 kg",rating:4.6,reviews:87,stock:10,desc:"Fine white sugar for tea, coffee and baking.",img:"https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=900&q=85"},
+{id:23,name:"Sunflower Oil",brand:"PureLife",cat:"Rice & Staples",price:139,old:159,unit:"1 L",rating:4.5,reviews:71,stock:10,desc:"Light sunflower cooking oil for everyday meals.",img:"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85"},
+{id:24,name:"Salt",brand:"DailyChoice",cat:"Rice & Staples",price:25,old:30,unit:"1 kg",rating:4.7,reviews:112,stock:10,desc:"Fine table salt for everyday cooking.",img:"https://images.unsplash.com/photo-1518110925495-5c3f4f1a9d5a?auto=format&fit=crop&w=900&q=85"},
+
+{id:25,name:"Potato Chips",brand:"GoodDay",cat:"Snacks",price:30,old:35,unit:"1 pack",rating:4.4,reviews:98,stock:10,desc:"Crispy potato chips with a classic salted flavour.",img:"https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=900&q=85"},
+{id:26,name:"Salted Peanuts",brand:"GoodDay",cat:"Snacks",price:45,old:55,unit:"200 g",rating:4.5,reviews:72,stock:10,desc:"Roasted peanuts with a satisfying crunchy bite.",img:"https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format&fit=crop&w=900&q=85"},
+{id:27,name:"Chocolate Cookies",brand:"GoodDay",cat:"Snacks",price:65,old:75,unit:"250 g",rating:4.7,reviews:106,stock:10,desc:"Chocolate cookies made for tea-time and quick snacks.",img:"https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=85"},
+{id:28,name:"Nachos",brand:"GoodDay",cat:"Snacks",price:55,old:65,unit:"150 g",rating:4.4,reviews:61,stock:10,desc:"Crunchy nachos for movie nights and parties.",img:"https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=900&q=85"},
+{id:29,name:"Popcorn",brand:"GoodDay",cat:"Snacks",price:40,old:50,unit:"100 g",rating:4.5,reviews:84,stock:10,desc:"Light crunchy popcorn for your next movie night.",img:"https://images.unsplash.com/photo-1585647347384-2593bc35786b?auto=format&fit=crop&w=900&q=85"},
+{id:30,name:"Trail Mix",brand:"NatureBest",cat:"Snacks",price:129,old:150,unit:"200 g",rating:4.6,reviews:56,stock:10,desc:"A convenient mix of nuts and dried fruits for snacking.",img:"https://images.unsplash.com/photo-1599599810694-b5ac4ddc9f0c?auto=format&fit=crop&w=900&q=85"},
+
+{id:31,name:"Orange Juice",brand:"PureLife",cat:"Beverages",price:99,old:120,unit:"1 L",rating:4.5,reviews:70,stock:10,desc:"Refreshing orange juice for breakfast and anytime.",img:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85"},
+{id:32,name:"Green Tea",brand:"PureLife",cat:"Beverages",price:129,old:150,unit:"25 bags",rating:4.7,reviews:91,stock:10,desc:"A light, refreshing green tea for your daily routine.",img:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85"},
+{id:33,name:"Instant Coffee",brand:"PureLife",cat:"Beverages",price:179,old:199,unit:"100 g",rating:4.8,reviews:133,stock:10,desc:"Rich instant coffee for a quick café-style cup.",img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"},
+{id:34,name:"Coconut Water",brand:"PureLife",cat:"Beverages",price:55,old:65,unit:"200 ml × 4",rating:4.5,reviews:54,stock:10,desc:"Refreshing coconut water for everyday hydration.",img:"https://images.unsplash.com/photo-1536591375667-f6b6b9a90f16?auto=format&fit=crop&w=900&q=85"},
+{id:35,name:"Lemon Soda",brand:"DailyChoice",cat:"Beverages",price:45,old:55,unit:"750 ml",rating:4.4,reviews:47,stock:10,desc:"Refreshing lemon-flavoured sparkling drink.",img:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=900&q=85"},
+{id:36,name:"Mineral Water",brand:"PureLife",cat:"Beverages",price:80,old:95,unit:"2 L × 2",rating:4.6,reviews:63,stock:10,desc:"Convenient bottled drinking water.",img:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=900&q=85"},
+
+{id:37,name:"Dishwash Liquid",brand:"HomeCare",cat:"Household",price:89,old:105,unit:"500 ml",rating:4.5,reviews:73,stock:10,desc:"Everyday dishwash liquid for clean kitchenware.",img:"https://images.unsplash.com/photo-1585832770485-e68a5dbfad52?auto=format&fit=crop&w=900&q=85"},
+{id:38,name:"Laundry Detergent",brand:"HomeCare",cat:"Household",price:199,old:230,unit:"2 kg",rating:4.7,reviews:119,stock:10,desc:"Laundry detergent for everyday clothes washing.",img:"https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=900&q=85"},
+{id:39,name:"Floor Cleaner",brand:"HomeCare",cat:"Household",price:119,old:140,unit:"1 L",rating:4.6,reviews:62,stock:10,desc:"Fresh-scented cleaner for floors and hard surfaces.",img:"https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=900&q=85"},
+{id:40,name:"Kitchen Towels",brand:"HomeCare",cat:"Household",price:75,old:90,unit:"3 pcs",rating:4.5,reviews:44,stock:10,desc:"Absorbent kitchen towels for everyday cleanup.",img:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"},
+{id:41,name:"Garbage Bags",brand:"HomeCare",cat:"Household",price:99,old:120,unit:"30 bags",rating:4.4,reviews:53,stock:10,desc:"Strong garbage bags for convenient household waste disposal.",img:"https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&w=900&q=85"},
+{id:42,name:"Scrub Pads",brand:"HomeCare",cat:"Household",price:49,old:60,unit:"6 pcs",rating:4.5,reviews:48,stock:10,desc:"Durable scrub pads for everyday kitchen cleaning.",img:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"},
+
+{id:43,name:"Bath Soap",brand:"HomeCare",cat:"Personal Care",price:55,old:65,unit:"4 pcs",rating:4.6,reviews:88,stock:10,desc:"Gentle everyday bathing soap.",img:"https://images.unsplash.com/photo-1607006483225-0e2c75f7f9a4?auto=format&fit=crop&w=900&q=85"},
+{id:44,name:"Shampoo",brand:"PureLife",cat:"Personal Care",price:179,old:210,unit:"650 ml",rating:4.7,reviews:92,stock:10,desc:"Everyday shampoo for clean, fresh-feeling hair.",img:"https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85"},
+{id:45,name:"Toothpaste",brand:"PureLife",cat:"Personal Care",price:99,old:115,unit:"150 g × 2",rating:4.7,reviews:101,stock:10,desc:"Everyday toothpaste for a clean mouth and fresh breath.",img:"https://images.unsplash.com/photo-1559591937-e5a9c6e2f0d1?auto=format&fit=crop&w=900&q=85"},
+{id:46,name:"Face Wash",brand:"PureLife",cat:"Personal Care",price:149,old:175,unit:"100 ml",rating:4.6,reviews:66,stock:10,desc:"Gentle daily face wash.",img:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85"},
+{id:47,name:"Hand Wash",brand:"PureLife",cat:"Personal Care",price:89,old:105,unit:"250 ml",rating:4.6,reviews:77,stock:10,desc:"Fresh hand wash for everyday use.",img:"https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?auto=format&fit=crop&w=900&q=85"},
+{id:48,name:"Body Lotion",brand:"PureLife",cat:"Personal Care",price:159,old:190,unit:"200 ml",rating:4.5,reviews:52,stock:10,desc:"Moisturising body lotion for everyday care.",img:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85"}
+];
